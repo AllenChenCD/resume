@@ -20,12 +20,12 @@
               <em class="W-lian-e3">梦想</em>
               <em class="W-lian-e4">未来</em>
             </p>
-            <p class="W-lian-p4">
+            <p class="W-lian-p4" style="text-align:center;">
               路漫漫其修远兮，吾将上下而求索<br>
-              如果做，就认真做<br>
-              短短数载，不甘平凡<br>
-              故里有桃花,红尽梦中年少<br>
-              期待有机会与您共事！
+              说不尽一世沧桑，道不明繁花依旧<br>
+              愿，故里有桃花，红尽梦中年少<br>
+              QQ：244676433<br>
+              微信：13458609282<br>
             </p>
             <p class="nav-btns">
               <a href="tencent://message/?uin=244676433&Site=400301.com&Menu=yes" target="_blank"

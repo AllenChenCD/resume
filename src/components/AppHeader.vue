@@ -49,7 +49,7 @@
       </a>
     </div>
   </div>
-    <audio id="h5audio_media" height="0" width="0" loop="true" autoplay="true" src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=80602E944F7A6060E9D5C36754FB9CD02578757E803FE7EEADA004B0C295238E429B595D83E36CA0AA80D1A802BA51B368B773C952379A25&amp;guid=6996208450&amp;uin=0&amp;fromtag=66"><source src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=80602E944F7A6060E9D5C36754FB9CD02578757E803FE7EEADA004B0C295238E429B595D83E36CA0AA80D1A802BA51B368B773C952379A25&amp;guid=6996208450&amp;uin=0&amp;fromtag=66"></audio>
+    <audio id="h5audio_media" height="0" width="0" autoplay="true" loop="true" src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=EEF4762FE7BF81CE24629D5C465A04B0ED8892B5D5657B11235E142E8CB66DBE0ED9CDD0CF8E6B8AE20B9CE2E6D021D8BEBA2B0406EDB72C&amp;guid=6996208450&amp;uin=244676433&amp;fromtag=66"><source src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=EEF4762FE7BF81CE24629D5C465A04B0ED8892B5D5657B11235E142E8CB66DBE0ED9CDD0CF8E6B8AE20B9CE2E6D021D8BEBA2B0406EDB72C&amp;guid=6996208450&amp;uin=244676433&amp;fromtag=66"></audio>
   </div>
 </template>
 
@@ -64,6 +64,7 @@
       }
     },
     mounted: function(){
+      this.chnagestate();
     },
     methods: {
       right_slide: function () {

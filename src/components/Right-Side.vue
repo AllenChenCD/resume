@@ -2,40 +2,22 @@
   <div class="am-hide-sm-only right-side-container">
     <div>
       <ul class="right-ul">
-        <li>
-
-          <router-link to="/" exact>
-            <i class="am-icon-home"></i>
-            首页
-          </router-link>
-        </li>
-        <li>
-
-
-            <router-link to="/about/:2">
-              <i class="am-icon-user"></i>
-              关于
-            </router-link>
-
-
-        </li>
-        <li>
-
-
-            <router-link to="/test/:3">
-              <i class="am-icon-product-hunt"></i>
-              项目
-            </router-link>
-
-
-        </li>
-        <li>
-
-            <router-link to="/contact/:4">
-              <i class="am-icon-connectdevelop"></i>
-              联系
-            </router-link>
-        </li>
+        <router-link to="/" exact tag="li">
+          <i class="am-icon-home"></i>
+          首页
+        </router-link>
+        <router-link to="/about/:2" tag="li">
+          <i class="am-icon-user"></i>
+          关于
+        </router-link>
+        <router-link to="/test/:3" tag="li">
+          <i class="am-icon-product-hunt"></i>
+          项目
+        </router-link>
+        <router-link to="/contact/:4" tag="li">
+          <i class="am-icon-connectdevelop"></i>
+          联系
+        </router-link>
       </ul>
     </div>
 
@@ -73,13 +55,6 @@
     padding-left: 0;
     padding-right: 10px;
   }
-  .right-ul .is-active{
-    color: #333333;
-  }
-  .right-ul > li>a {
-    display: flex;
-    justify-content: space-around;
-  }
 
   .right-side {
     position: fixed;
@@ -103,14 +78,13 @@
     display: block;
     margin-bottom: 10px;
     padding-bottom: 5px;
+    cursor: pointer;
+    font-weight: 700;
   }
 
-  .right-ul > li > a>i {
-    padding-right: 7px;
-  }
-
-  .right-ul > li > a>i {
-    font-size: 18px;
+  .right-ul .is-active {
+    color: #333333;
+    left: -10px;
   }
 
   .right-ul > li:after {
@@ -124,14 +98,19 @@
     -webkit-transition: width 350ms, left 350ms;
   }
 
-  .right-ul > li, .right-ul > li > a {
+  .right-ul > .is-active:after {
+    border-color: #333333;
+  }
+
+  .right-ul > li{
     color: #c0c4cc;
   }
-
-  .right-ul > li > a {
-    font-weight: 700 !important;
+  .right-ul > li i{
+    font-size: 18px;
+    padding-right: 5px;
+    vertical-align: middle;
+    transition: all linear 0s;
   }
-
   .right-ul > li:hover:after {
     left: 0;
     width: 100%;
@@ -139,5 +118,4 @@
     -moz-transition: width 350ms;
     -webkit-transition: width 350ms;
   }
-
 </style>

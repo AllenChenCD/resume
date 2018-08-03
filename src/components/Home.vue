@@ -1,29 +1,30 @@
 <template>
 
-    <div class="wrap">
-        <transition name="slide-fade">
-          <div class="middle am-padding" id="middle-container">
-            <div class="block" style="width: 100%;height: 100%">
-              <h2 class="title">hey,I'M Allen</h2>
-              <p>{{msg}}</p>
-              <p class="cn-name">{{ cn_msg}}</p>
-              <p class="cn-name">{{ cn_msg2}}</p>
-              <p class="nav-btns">
-                <a href="tencent://message/?uin=244676433&Site=400301.com&Menu=yes" target="_blank"
-                   class="am-icon-btn am-primary am-icon-qq am-animation-slide-left"></a>
-                <a href="https://www.jianshu.com/u/1f3214c9e01d" class=" am-icon-btn am-secondary am-icon-drupal  am-animation-slide-left"></a>
-                <a href="https://github.com/" class="am-icon-btn am-icon-github  am-animation-slide-left"></a>
-                <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=d0VDQ0FAQUNERDcGBlkUGBo"
-                   class="am-icon-btn am-icon-envelope am-animation-slide-left "></a>
-              </p>
-            </div>
-          </div>
-        </transition>
-     <div class="slider">
-       <div class="modal"></div>
-        <img src="../assets/img/bk1.jpg" alt="" id="image">
+  <div class="wrap">
+    <transition name="slide-fade">
+      <div class="middle am-padding" id="middle-container">
+        <div class="block" style="width: 100%;height: 100%">
+          <h2 class="title">hey,I'M Allen</h2>
+          <p>{{msg}}</p>
+          <p class="cn-name">{{ cn_msg}}</p>
+          <p class="cn-name">{{ cn_msg2}}</p>
+          <p class="nav-btns">
+            <a href="tencent://message/?uin=244676433&Site=400301.com&Menu=yes" target="_blank"
+               class="am-icon-btn am-primary am-icon-qq am-animation-slide-left"></a>
+            <a href="https://www.jianshu.com/u/1f3214c9e01d"
+               class=" am-icon-btn am-secondary am-icon-drupal  am-animation-slide-left"></a>
+            <a href="https://github.com/" class="am-icon-btn am-icon-github  am-animation-slide-left"></a>
+            <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=d0VDQ0FAQUNERDcGBlkUGBo"
+               class="am-icon-btn am-icon-envelope am-animation-slide-left "></a>
+          </p>
+        </div>
       </div>
+    </transition>
+    <div class="slider">
+      <div class="modal"></div>
+      <img src="../assets/img/bk1.jpg" alt="" id="image">
     </div>
+  </div>
 
 </template>
 
@@ -32,43 +33,55 @@
 
   export default {
     name: 'Home',
-
-
-    mounted:function () {
-        var mouse = {
-          x: 0,
-          y: 0,
-          cx: 0,
-          cy: 0
-        }
-        var block = {
-          x: mouse.x,
-          y: mouse.y,
-          cx:mouse.cx,
-          cy:mouse.cy
-        }
-        $('.block').on("mousemove",function (e) {
-          mouse.x=(e.pageX - $(this).offset().left) - $(".block").width()/2
-          mouse.y=(e.pageY - $(this).offset().top) - $(".block").height()/2
-        })
-        $(".block").on("mouseleave",function (e) {
-          mouse.x = mouse.cx;
-          mouse.y = mouse.cy;
-        })
-        var xxx=setInterval(function () {
-          block.cy+=(mouse.y - block.cy)/12;
-          block.cx+=(mouse.x - block.cx)/12;
-          $(".block").css({
-            transform:'scale(1.03) translate('+(block.cx*0.05)+'px, '+(block.cy*0.05)+'px) rotateX('+(block.cy*0.05)+'deg) rotateY('+(block.cx*0.05)+'deg)'
-          })
-        },50)
+    created:function () {
+      clearInterval()
+    },
+    mounted: function () {
+      var mouse = {
+        x: 0,
+        y: 0,
+        cx: 0,
+        cy: 0
+      }
+      var block = {
+        x: mouse.x,
+        y: mouse.y,
+        cx: mouse.cx,
+        cy: mouse.cy
+      }
+      this.mouse_move(mouse,block)
+      this.mouse_leave(mouse,block)
+      this.set_int(mouse,block)
     },
     data() {
       return {
         msg: 'Life is like a boat',
         cn_msg: '你好，我叫陈健平',
-        cn_msg2:'请多指教',
-        active:1
+        cn_msg2: '请多指教',
+        active: 1
+      }
+    },
+    methods: {
+      mouse_move: function (mouse,block) {
+        $('.block').on("mousemove", function (e) {
+          mouse.x = (e.pageX - $(this).offset().left) - $(".block").width() / 2
+          mouse.y = (e.pageY - $(this).offset().top) - $(".block").height() / 2
+        })
+      },
+      mouse_leave: function (mouse,block) {
+        $(".block").on("mouseleave", function (e) {
+          mouse.x = mouse.cx;
+          mouse.y = mouse.cy;
+        })
+      },
+      set_int:function (mouse,block) {
+        var xxx = setInterval(function () {
+          block.cy += (mouse.y - block.cy) / 12;
+          block.cx += (mouse.x - block.cx) / 12;
+          $(".block").css({
+            transform: 'scale(1.03) translate(' + (block.cx * 0.05) + 'px, ' + (block.cy * 0.05) + 'px) rotateX(' + (block.cy * 0.05) + 'deg) rotateY(' + (block.cx * 0.05) + 'deg)'
+          })
+        }, 50)
       }
     },
     destroyed(){
@@ -78,8 +91,6 @@
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
-
 
 
   body, html {

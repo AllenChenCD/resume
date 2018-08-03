@@ -2,7 +2,7 @@
   <div class="pro-wrap" style="padding-top: 60px">
     <div>
       <div>
-        <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+        <div>
           <div class="section-title">
             <h1 class="heading" style="margin: 10vh 0">WHAT I DID</h1>
           </div>
@@ -11,12 +11,12 @@
           <el-carousel-item v-for="(item,index) in rolldata" :key="index">
             <div class="am-container">
               <div class="parent am-hide-sm-only am-u-md-8">
-                 <div class="container">
-                   <div class="item" v-for="itemc in item.img">
-                     <img :src="itemc" alt="">
-                   </div>
-                 </div>
-               </div>
+                <div class="container">
+                  <div class="item" v-for="itemc in item.img">
+                    <img :src="itemc" alt="">
+                  </div>
+                </div>
+              </div>
               <div style="padding: 30px" class="am-u-sm-12 am-u-md-4">
                 <h1>{{item.name}}</h1>
                 <p class="am-md-text-justify">{{item.descript}}</p>
@@ -27,81 +27,34 @@
         </el-carousel>
       </div>
     </div>
+    <div class="am-g other-slik" style="background: #ffffff">
+      <div class="am-container am-padding-top">
+         <div class="sp">
+          <a v-for="item in p_name" :href="item.url">{{item.name}}</a>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 
 <script>
   import RightSide from '@/components/Right-Side'
-  import {testdata}from '@/data/testdata'
+  import {testdata} from '@/data/testdata'
+  import {product} from '@/data/testdata'
 
   export default {
     name: "test",
     data() {
       return {
         clickthis: "0",
-        product: [
-          {
-            name: "射洪赶场网",
-            img_src: "/static/f1.png",
-            url: ""
-          },
-          {
-            name: "四川大学文新学院",
-            img_src: "/static/f2.png",
-            url: ""
-          },
-          {
-            name: "Epico",
-            img_src: "/static/f3.png",
-            url: ""
-          },
-          {
-            name: "上海宜家购物商城",
-            img_src: "/static/f4.png",
-            url: ""
-          },
-          {
-            name: "上海宜家购物商城web-app",
-            img_src: "/static/f5.png",
-            url: ""
-          },
-          {
-            name: "江安县康复中心",
-            img_src: "/static/f6.png",
-            url: ""
-          },
-          {
-            name: "川大川科",
-            img_src: "/static/f7.png",
-            url: ""
-          },
-          {
-            name: "慧天云建筑",
-            img_src: "/static/f8.png",
-            url: ""
-          },
-          {
-            name: "慧天云通科技有限公司",
-            img_src: "/static/f9.png",
-            url: ""
-          },
-          {
-            name: "四川大学数学学院",
-            img_src: "/static/f10.png",
-            url: ""
-          }
-        ],
-        rolldata:''
+        rolldata: '',
+        p_name:[]
       }
     },
-    created(){
+    created() {
       this.rolldata = testdata
-    },
-    mounted() {
-      $('.am-slider').flexslider({
-        itemWidth: 200, itemMargin: 4, slideshow: false
-      });
+      this.p_name = product
     },
     components: {
       RightSide
@@ -163,10 +116,32 @@
         ]
       }
     },
-    methods: {}
+    methods: {},
+    destroyed() {
+      clearInterval()
+    }
   }
 </script>
 <style>
+  .sp > a {
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    padding: 6px 30px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #f5f5f5;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333333;
+  }
+
+  .sp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
@@ -266,14 +241,14 @@
       -moz-transform: rotateY(0deg);
     }
     /*50% {*/
-      /*-webkit-transform: rotateX(360deg);*/
-      /*-ms-transform: rotateX(360deg);*/
-      /*-moz-transform: rotateX(360deg);*/
+    /*-webkit-transform: rotateX(360deg);*/
+    /*-ms-transform: rotateX(360deg);*/
+    /*-moz-transform: rotateX(360deg);*/
     /*}*/
     /*75% {*/
-      /*-webkit-transform: rotateY(90deg);*/
-      /*-ms-transform: rotateY(90deg);*/
-      /*-moz-transform: rotateY(90deg);*/
+    /*-webkit-transform: rotateY(90deg);*/
+    /*-ms-transform: rotateY(90deg);*/
+    /*-moz-transform: rotateY(90deg);*/
     /*}*/
     100% {
       -webkit-transform: rotateY(360deg);
