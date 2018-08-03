@@ -74,9 +74,14 @@ export const  product=[
   {
     name: "会议室预约系统",
     url: "http://math1.scu.edu.cn/portals/room/index.php"
-  },
+  }
+  ,
   {
     name: "德阳金穗网",
     url: "/"
+  },
+  {
+    name: "NODE爬虫",
+    url: "https://github.com/AllenChenCD/spider"
   }
   ]

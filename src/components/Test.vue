@@ -24,14 +24,15 @@
               </div>
             </div>
           </el-carousel-item>
+          <el-carousel-item>
+            <div style="padding: 30px" class="am-container">
+              <h1>其他的项目</h1>
+              <div class="sp">
+                <a v-for="item in p_name" :href="item.url">{{item.name}}</a>
+              </div>
+            </div>
+          </el-carousel-item>
         </el-carousel>
-      </div>
-    </div>
-    <div class="am-g other-slik" style="background: #ffffff">
-      <div class="am-container am-padding-top">
-         <div class="sp">
-          <a v-for="item in p_name" :href="item.url">{{item.name}}</a>
-        </div>
       </div>
     </div>
   </div>

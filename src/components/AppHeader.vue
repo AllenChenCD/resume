@@ -1,6 +1,5 @@
 <template>
   <div class="am-cf">
-
     <div class="right-side">
       <div class="navigation" style="border-bottom-width: 100vh;">
         <ul style="right: 3%;" class="nav-ul">
@@ -52,7 +51,6 @@
     <audio id="h5audio_media" height="0" width="0" autoplay="true" loop="true" src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=EEF4762FE7BF81CE24629D5C465A04B0ED8892B5D5657B11235E142E8CB66DBE0ED9CDD0CF8E6B8AE20B9CE2E6D021D8BEBA2B0406EDB72C&amp;guid=6996208450&amp;uin=244676433&amp;fromtag=66"><source src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=EEF4762FE7BF81CE24629D5C465A04B0ED8892B5D5657B11235E142E8CB66DBE0ED9CDD0CF8E6B8AE20B9CE2E6D021D8BEBA2B0406EDB72C&amp;guid=6996208450&amp;uin=244676433&amp;fromtag=66"></audio>
   </div>
 </template>
-
 <script>
   export default {
     name: "AppHeader",

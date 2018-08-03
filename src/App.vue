@@ -4,7 +4,9 @@
        <RightSide></RightSide>
       <AppHeader></AppHeader>
     </div>
+    <keep-alive>
       <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -18,6 +20,9 @@
       RightSide: RightSide,
       AppHeader: AppHeader
     },
+    mounted(){
+      console.log("欢迎加入交群855260815")
+    }
   }
 </script>
 
