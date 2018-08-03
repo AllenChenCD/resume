@@ -15,5 +15,11 @@ export const testdata=[{
     descript:"这是射洪老百姓自己的电子商务网站。",
     url:"https://m.ikea-sh.cn/",
     img:["/static/pro2/f1.png","/static/pro2/f2.png","/static/pro2/f1.png","/static/pro2/f2.png"]
+  },
+  {
+    name:"四川大学文新学院",
+    descript:"这是射洪老百姓自己的电子商务网站。",
+    url:"https://m.ikea-sh.cn/",
+    img:["/static/pro2/f1.png","/static/pro2/f2.png","/static/pro2/f1.png","/static/pro2/f2.png"]
   }
 ]
