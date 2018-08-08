@@ -6,15 +6,15 @@
           <i class="am-icon-home"></i>
           首页
         </router-link>
-        <router-link to="/about/:2" tag="li">
+        <router-link to="/about" tag="li">
           <i class="am-icon-user"></i>
           关于
         </router-link>
-        <router-link to="/test/:3" tag="li">
+        <router-link to="/test" tag="li">
           <i class="am-icon-product-hunt"></i>
           项目
         </router-link>
-        <router-link to="/contact/:4" tag="li">
+        <router-link to="/contact" tag="li">
           <i class="am-icon-connectdevelop"></i>
           联系
         </router-link>

@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
 var webpack=require('webpack');
 
 function resolve (dir) {
@@ -80,7 +81,7 @@ module.exports = {
     child_process: 'empty'
   },
   plugins:[
-
+    new PrerenderSpaPlugin(path.join(__dirname, '../dist'), ['/','/product','/test','/about','/contact']),
     new webpack.optimize.CommonsChunkPlugin('common.js'),
 
     new webpack.ProvidePlugin({

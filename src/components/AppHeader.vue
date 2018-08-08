@@ -9,17 +9,17 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/about/:2">
+            <router-link to="/about">
               关于<span></span>
             </router-link>
           </li>
           <li>
-            <router-link to="/test/:3">
+            <router-link to="/test">
               项目<span></span>
             </router-link>
           </li>
           <li>
-            <router-link to="/contact/:4">
+            <router-link to="/contact">
               联系<span></span>
             </router-link>
           </li>
