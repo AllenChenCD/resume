@@ -235,7 +235,7 @@
     height: 100%;
   }
 
-  @-webkit-keyframes move {
+  @keyframes move {
     0% {
       -webkit-transform: rotateY(0deg);
       -ms-transform: rotateY(0deg);

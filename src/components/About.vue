@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 60px">
+  <div style="padding-top: 60px; background: #494748;">
     <div class="banner-info am-container">
       <div class="am-u-md-7 header-right">
         <h1>Hi !</h1>
@@ -506,9 +506,9 @@
     padding: 5em 0;
   }
 
-  body {
-    background: #494748;
-  }
+  /*body {*/
+    /*background: #494748;*/
+  /*}*/
 
   .banner-info {
     background: rgba(23, 20, 20, 0.58);
