@@ -1,25 +1,29 @@
 export const testdata=[{
   name:"上海宜家商城",
-  descript:"宜家网上商城, 提供7000多种家具, 家居产品, 并持续推出新品. 有客厅, 卧室, 餐厅, 厨房, 儿童房, 书房, 阳台, 浴室, 户外的各式家具, 家居产品, 来为您打造家居解决方案. 详细的产品介绍, 和生动的场景照片, 给您带来方便, 快捷的的网上购物体验 .",
+  descript:"宜家网上商城,pc版基于Magento2框架开发，前端集合requirejs，jquery等插件和库，页面基于xhtml，构造灵活。并有m端，微信端等等。",
+  work:'团队开发，主要负责前端的页面展示和交互',
   url:"https://www.ikea-sh.cn/",
   img:["/static/pro1/f1.png","/static/pro1/f2.png","/static/pro1/f3.png","/static/pro1/f4.png"]
 },
   {
     name:"射洪赶场网",
-    descript:"这是射洪老百姓自己的电子商务网站。",
+    descript:"这是射洪老百姓自己的电子商务网站。基于ecmall框架开发，前端集合amazeui，jquery等，并有一款app，基于ionic混编开发",
     url:"https://m.ikea-sh.cn/",
+    work:'团队开发，所有的页面展示交互',
     img:["/static/pro2/f1.png","/static/pro2/f2.png","/static/pro2/f3.png","/static/pro2/f4.png"]
   },
   {
     name:"四川大学文新学院",
-    descript:"四川大学文学与新闻学院（四川大学新闻学院）。",
+    descript:"四川大学文学与新闻学院官方网站，基于ecmall和amazeui+jquery的响应式网站。并有内部公众号",
     url:"https://m.ikea-sh.cn/",
+    work:'独立，负责框架的控制器编写，前端页面编写，兼容性等（后端负责接口编写）',
     img:["/static/pro3/f1.png","/static/pro3/f2.png","/static/pro3/f3.png","/static/pro3/f4.png"]
   },
   {
     name:"Epico",
-      descript:"Epicor develops Alliance ISV partnerships to enhance and expand solutions for our customers. Every Alliance ISV partnership is built on product synergies that enable Epicor to offer comprehensive and industry-leading business solutions to Epicor customers.",
+    descript:"Epicor develops Alliance ISV partnerships to enhance。一个外国网站，基本由前端技术编写,并集合大量插件",
     url:"https://m.ikea-sh.cn/",
+    work:"独立开发，负责psd图转原型图，各特效编写，",
     img:["/static/pro4/f1.png","/static/pro4/f2.png","/static/pro4/f3.png","/static/pro4/f4.png"]
   },
 ]
@@ -74,14 +78,13 @@ export const  product=[
   {
     name: "会议室预约系统",
     url: "http://math1.scu.edu.cn/portals/room/index.php"
-  }
-  ,
+  },
   {
     name: "德阳金穗网",
     url: "/"
   },
   {
-    name: "NODE爬虫",
-    url: "https://github.com/AllenChenCD/spider"
+    name: "四川省数学协会",
+    url: "http://106.14.118.188/sxxh/"
   }
   ]

@@ -34,7 +34,7 @@
   export default {
     name: 'Home',
     created:function () {
-      clearInterval()
+      clearInterval(this.xxx)
     },
     mounted: function () {
       var mouse = {
@@ -104,7 +104,7 @@
   }
 
   * {
-    transition: all linear 0.2s;
+    transition: all linear 0.1s;
   }
 
   .wrap {

@@ -18,15 +18,17 @@
                 </div>
               </div>
               <div style="padding: 30px" class="am-u-sm-12 am-u-md-4">
-                <h1>{{item.name}}</h1>
+                <h1>
+                  <a :href="item.url">{{item.name}}</a>
+                </h1>
                 <p class="am-md-text-justify">{{item.descript}}</p>
-                <a :href="item.url"></a>
+                <p class="am-md-text-justify">工作内容：{{item.work}}</p>
               </div>
             </div>
           </el-carousel-item>
           <el-carousel-item>
             <div style="padding: 30px" class="am-container">
-              <h1>其他的项目</h1>
+              <h1>线上项目</h1>
               <div class="sp">
                 <a v-for="item in p_name" :href="item.url">{{item.name}}</a>
               </div>
@@ -160,7 +162,7 @@
   }
 
   * {
-    transition: all ease-in-out 0.5s
+    transition: all ease-in-out 0.1s
   }
 
   .parent {
