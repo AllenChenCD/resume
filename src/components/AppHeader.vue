@@ -69,7 +69,7 @@
     },
     mounted: function(){
       this.$nextTick(function () {
-          h5audio_media.play()
+        this.chnagestate()
       })
     },
     methods: {
