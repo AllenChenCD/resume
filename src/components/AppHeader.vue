@@ -15,7 +15,12 @@
           </li>
           <li>
             <router-link to="/test">
-              项目<span></span>
+              线上项目<span></span>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/test">
+              demo<span></span>
             </router-link>
           </li>
           <li>
@@ -48,7 +53,8 @@
       </a>
     </div>
   </div>
-    <audio id="h5audio_media" height="0" width="0" autoplay="true" loop="true" src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=EEF4762FE7BF81CE24629D5C465A04B0ED8892B5D5657B11235E142E8CB66DBE0ED9CDD0CF8E6B8AE20B9CE2E6D021D8BEBA2B0406EDB72C&amp;guid=6996208450&amp;uin=244676433&amp;fromtag=66"><source src="http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?vkey=EEF4762FE7BF81CE24629D5C465A04B0ED8892B5D5657B11235E142E8CB66DBE0ED9CDD0CF8E6B8AE20B9CE2E6D021D8BEBA2B0406EDB72C&amp;guid=6996208450&amp;uin=244676433&amp;fromtag=66"></audio>
+    <audio id="h5audio_media" height="0" width="0"  loop="true" src="http://dl.stream.qqmusic.qq.com/http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?guid=1921607110&vkey=E5EC8CD2848C3E433F8999FBFFE7BE39A10AC56636FCA5E02935589ABE80447CF0566ED17E6B57362304AA39EB6D73D589B1ED4EA9E7D2AF&uin=0&fromtag=38" ref="audio">
+    </audio>
   </div>
 </template>
 <script>
@@ -62,7 +68,9 @@
       }
     },
     mounted: function(){
-      this.chnagestate();
+      this.$nextTick(function () {
+          h5audio_media.play()
+      })
     },
     methods: {
       right_slide: function () {

@@ -3,7 +3,7 @@
     <div class="banner-info am-container">
       <div class="am-u-md-7 header-right">
         <h1>Hi !</h1>
-        <h6>web前端</h6>
+        <h6>I am frontend</h6>
         <ul class="address">
 
           <li>
@@ -558,7 +558,7 @@
 
   .header-left {
     padding-top: 3em;
-    position: absolute;
+    position: absolute!important;
     right: 0;
     bottom: 0;
   }

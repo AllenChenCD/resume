@@ -12,7 +12,7 @@
         </router-link>
         <router-link to="/test" tag="li">
           <i class="am-icon-product-hunt"></i>
-          项目
+          线上项目
         </router-link>
         <router-link to="/contact" tag="li">
           <i class="am-icon-connectdevelop"></i>
@@ -54,6 +54,7 @@
   .right-ul {
     padding-left: 0;
     padding-right: 10px;
+    text-align: left;
   }
 
   .right-side {
@@ -84,7 +85,8 @@
 
   .right-ul .is-active {
     color: #333333;
-    left: -10px;
+    transform: translate(-20px,0);
+    transition:transform linear 0.2s ;
   }
 
   .right-ul > li:after {

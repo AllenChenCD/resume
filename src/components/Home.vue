@@ -34,7 +34,7 @@
   export default {
     name: 'Home',
     created:function () {
-      console.log("test git")
+      clearInterval(this.xxx)
     },
     mounted: function () {
       var mouse = {
@@ -49,30 +49,9 @@
         cx: mouse.cx,
         cy: mouse.cy
       }
-      mouse_move(mouse,block)
-      mouse_leave(mouse,block)
-      set_int(mouse,block)
-      function mouse_move(mouse,block) {
-        $('.block').on("mousemove", function (e) {
-          mouse.x = (e.pageX - $(this).offset().left) - $(".block").width() / 2
-          mouse.y = (e.pageY - $(this).offset().top) - $(".block").height() / 2
-        })
-      }
-      function mouse_leave(mouse,block) {
-        $(".block").on("mouseleave", function (e) {
-          mouse.x = mouse.cx;
-          mouse.y = mouse.cy;
-        })
-      }
-      function  set_int(mouse,block) {
-        var xxx = setInterval(function () {
-          block.cy += (mouse.y - block.cy) / 12;
-          block.cx += (mouse.x - block.cx) / 12;
-          $(".block").css({
-            transform: 'scale(1.03) translate(' + (block.cx * 0.05) + 'px, ' + (block.cy * 0.05) + 'px) rotateX(' + (block.cy * 0.05) + 'deg) rotateY(' + (block.cx * 0.05) + 'deg)'
-          })
-        }, 50)
-      }
+      this.mouse_move(mouse,block)
+      this.mouse_leave(mouse,block)
+      this.set_int(mouse,block)
     },
     data() {
       return {
@@ -83,7 +62,27 @@
       }
     },
     methods: {
-
+      mouse_move: function (mouse,block) {
+        $('.block').on("mousemove", function (e) {
+          mouse.x = (e.pageX - $(this).offset().left) - $(".block").width() / 2
+          mouse.y = (e.pageY - $(this).offset().top) - $(".block").height() / 2
+        })
+      },
+      mouse_leave: function (mouse,block) {
+        $(".block").on("mouseleave", function (e) {
+          mouse.x = mouse.cx;
+          mouse.y = mouse.cy;
+        })
+      },
+      set_int:function (mouse,block) {
+        var xxx = setInterval(function () {
+          block.cy += (mouse.y - block.cy) / 12;
+          block.cx += (mouse.x - block.cx) / 12;
+          $(".block").css({
+            transform: 'scale(1.03) translate(' + (block.cx * 0.05) + 'px, ' + (block.cy * 0.05) + 'px) rotateX(' + (block.cy * 0.05) + 'deg) rotateY(' + (block.cx * 0.05) + 'deg)'
+          })
+        }, 50)
+      }
     },
     destroyed(){
       clearInterval(this.xxx)
@@ -105,7 +104,7 @@
   }
 
   * {
-    transition: all linear 0.2s;
+    transition: all linear 0.1s;
   }
 
   .wrap {
