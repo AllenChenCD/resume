@@ -19,11 +19,6 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/test">
-              demo<span></span>
-            </router-link>
-          </li>
-          <li>
             <router-link to="/contact">
               联系<span></span>
             </router-link>
@@ -38,22 +33,24 @@
 
     </div>
     <div>
-    <div class="right-icon" @click="right_slide">
-      <i class="am-header-icon am-icon-bars" style="font-size: 40px"></i>
+      <div class="right-icon" @click="right_slide">
+        <i class="am-header-icon am-icon-bars" style="font-size: 40px"></i>
+      </div>
+      <div class="W-head-portrait">
+        <a href="javascript:;">
+          <img src="/static/photo.png" @click="chnagestate" class="my-photo">
+          <div class="play-img">
+            <i class="am-icon-play" v-if="!show" @click="chnagestate"></i>
+            <!--<i class="am-icon-puzzle-piece" v-if="!show"  @click="chnagestate"></i>-->
+          </div>
+          <div class="My-resume"><span>Allen</span><i>'s</i> resume</div>
+          <div class="clear"></div>
+        </a>
+      </div>
     </div>
-    <div class="W-head-portrait">
-      <a href="javascript:;">
-        <img src="/static/photo.png" @click="chnagestate" class="my-photo">
-        <div class="play-img">
-          <i class="am-icon-play" v-if="!show"  @click="chnagestate"></i>
-          <!--<i class="am-icon-puzzle-piece" v-if="!show"  @click="chnagestate"></i>-->
-        </div>
-        <div class="My-resume"><span>Allen</span><i>'s</i> resume</div>
-        <div class="clear"></div>
-      </a>
-    </div>
-  </div>
-    <audio id="h5audio_media" height="0" width="0"  loop="true" src="http://dl.stream.qqmusic.qq.com/http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?guid=1921607110&vkey=E5EC8CD2848C3E433F8999FBFFE7BE39A10AC56636FCA5E02935589ABE80447CF0566ED17E6B57362304AA39EB6D73D589B1ED4EA9E7D2AF&uin=0&fromtag=38" ref="audio">
+    <audio id="h5audio_media" height="0" width="0" loop="true"
+           src="http://dl.stream.qqmusic.qq.com/http://dl.stream.qqmusic.qq.com/C400003LolRI06scAG.m4a?guid=1921607110&vkey=E5EC8CD2848C3E433F8999FBFFE7BE39A10AC56636FCA5E02935589ABE80447CF0566ED17E6B57362304AA39EB6D73D589B1ED4EA9E7D2AF&uin=0&fromtag=36"
+           ref="audio">
     </audio>
   </div>
 </template>
@@ -64,10 +61,10 @@
       return {
         transformstate: 0,
         comid: 0,
-        show:true
+        show: true
       }
     },
-    mounted: function(){
+    mounted: function () {
       this.$nextTick(function () {
         this.chnagestate()
       })
@@ -79,39 +76,43 @@
       closeside: function () {
         $(".right-side").css("transform", "translateX(100%)")
       },
-      chnagestate:function () {
-        this.show=!this.show;
-       if(!this.show){
-         $(".my-photo").css("animation-play-state","paused");
-         h5audio_media.pause()
-       }else {
-         $(".my-photo").css("animation-play-state","running");
-         h5audio_media.play()
-       }
+      chnagestate: function () {
+        this.show = !this.show;
+        if (!this.show) {
+          $(".my-photo").css("animation-play-state", "paused");
+          h5audio_media.pause()
+        } else {
+          $(".my-photo").css("animation-play-state", "running");
+          h5audio_media.play()
+        }
       }
+
     },
 
   }
 </script>
 
 <style scoped>
-  .my-photo{
-    animation: roll 3s linear  infinite;
+  .my-photo {
+    animation: roll 3s linear infinite;
   }
-  .play-img{
+
+  .play-img {
     position: absolute;
     left: 13%;
     top: 22%;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
+
   @keyframes roll {
-    0%{
+    0% {
       transform: rotateZ(0);
     }
-    100%{
+    100% {
       transform: rotateZ(360deg);
     }
   }
+
   .W-head-portrait {
     width: 280px;
     height: 60px;
@@ -121,9 +122,10 @@
     top: 20px;
     cursor: pointer;
     border: 1px solid #ccc;
-    background: rgba(255,255,255,.4);
+    background: rgba(255, 255, 255, .4);
     border-radius: 10px;
   }
+
   .W-head-portrait img {
     margin-left: 4%;
     width: 60px;
@@ -132,6 +134,7 @@
     float: left;
     /*border: 1px solid #ccc;*/
   }
+
   .My-resume {
     margin-left: 20px;
     font-size: 18px;
@@ -141,6 +144,7 @@
     color: #000;
     font-weight: 800;
   }
+
   .My-resume span {
     display: inline-block;
     color: white;
@@ -152,22 +156,27 @@
     background: #000;
     border-radius: 4px;
   }
+
   .My-resume i {
     font-size: 18px;
     font-weight: 500;
     padding-left: 5px;
   }
+
   .clear {
     clear: both;
     overflow: hidden;
   }
-  .am-icon-times:hover{
+
+  .am-icon-times:hover {
     transform: rotateZ(360deg);
     transition: all linear 0.5s;
   }
-  .am-icon-bars{
+
+  .am-icon-bars {
     color: #666;
   }
+
   .am-icon-times {
     font-size: 30px;
   }

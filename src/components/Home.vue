@@ -33,7 +33,7 @@
 
   export default {
     name: 'Home',
-    created:function () {
+    created: function () {
       clearInterval(this.xxx)
     },
     mounted: function () {
@@ -49,9 +49,10 @@
         cx: mouse.cx,
         cy: mouse.cy
       }
-      this.mouse_move(mouse,block)
-      this.mouse_leave(mouse,block)
-      this.set_int(mouse,block)
+      this.mouse_move(mouse, block)
+      this.mouse_leave(mouse, block)
+      this.set_int(mouse, block)
+        this.removeMode()
     },
     data() {
       return {
@@ -62,19 +63,19 @@
       }
     },
     methods: {
-      mouse_move: function (mouse,block) {
+      mouse_move: function (mouse, block) {
         $('.block').on("mousemove", function (e) {
           mouse.x = (e.pageX - $(this).offset().left) - $(".block").width() / 2
           mouse.y = (e.pageY - $(this).offset().top) - $(".block").height() / 2
         })
       },
-      mouse_leave: function (mouse,block) {
+      mouse_leave: function (mouse, block) {
         $(".block").on("mouseleave", function (e) {
           mouse.x = mouse.cx;
           mouse.y = mouse.cy;
         })
       },
-      set_int:function (mouse,block) {
+      set_int: function (mouse, block) {
         var xxx = setInterval(function () {
           block.cy += (mouse.y - block.cy) / 12;
           block.cx += (mouse.x - block.cx) / 12;
@@ -82,9 +83,16 @@
             transform: 'scale(1.03) translate(' + (block.cx * 0.05) + 'px, ' + (block.cy * 0.05) + 'px) rotateX(' + (block.cy * 0.05) + 'deg) rotateY(' + (block.cx * 0.05) + 'deg)'
           })
         }, 50)
+      },
+      removeMode() {
+        setTimeout(function () {
+          $("#loader").fadeOut()
+          $(".loader-section").animate({width: 0}, 1000)
+          $("#loader-wrapper").remove()
+        }, 800)
       }
     },
-    destroyed(){
+    destroyed() {
       clearInterval(this.xxx)
     }
   }
